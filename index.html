@@ -724,7 +724,7 @@
                             showAlert('ข้อมูลการจองถูกส่งไปแล้ว กำลังอัปเดตรายการ...');
                             await loadBookings(); 
                             navigateTo('bookings');
-                        }, 2500); // เพิ่มดีเลย์เพื่อให้ Apps Script มีเวลาประมวลผล
+                        }, 7000); // เพิ่มดีเลย์เพื่อให้ Apps Script มีเวลาประมวลผล
 
                     } catch (error) {
                         console.error('Error adding booking (fetch with no-cors):', error);
