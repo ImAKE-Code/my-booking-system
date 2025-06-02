@@ -670,7 +670,7 @@
                 alertEl.className = `fixed top-5 right-5 text-white py-2 px-6 rounded-lg shadow-lg transition-all duration-300 ${isSuccess ? 'bg-green-500' : 'bg-red-500'}`;
                 alertEl.classList.remove('opacity-0', 'translate-y-10');
 
-                setTimeout(() => {
+                set(() => {
                     alertEl.classList.add('opacity-0', 'translate-y-10');
                 }, 3000);
             }
@@ -724,7 +724,7 @@
                             showAlert('ข้อมูลการจองถูกส่งไปแล้ว กำลังอัปเดตรายการ...');
                             await loadBookings(); 
                             navigateTo('bookings');
-                        }, 2500); // เพิ่มดีเลย์เพื่อให้ Apps Script มีเวลาประมวลผล
+                        }, 10000); // เพิ่มดีเลย์เพื่อให้ Apps Script มีเวลาประมวลผล
 
                     } catch (error) {
                         console.error('Error adding booking (fetch with no-cors):', error);
@@ -761,7 +761,7 @@
                         setTimeout(async () => {
                             showAlert('ข้อมูลค่าใช้จ่ายถูกส่งไปแล้ว กำลังอัปเดตรายการ...');
                             await loadExpenses();
-                        }, 2500);
+                        }, 10000);
 
                     } catch (error) {
                         console.error('Error adding expense (fetch with no-cors):', error);
@@ -815,7 +815,7 @@
                         setTimeout(async () => {
                              showAlert('สถานะถูกส่งไปอัปเดตแล้ว กำลังโหลดข้อมูลใหม่...');
                              await loadBookings(); // โหลดข้อมูลใหม่เพื่อยืนยัน (หรือถ้า server fail จะ revert UI)
-                        }, 2500);
+                        }, 10000);
 
                     } catch (error) {
                         console.error('Error updating booking status (fetch with no-cors):', error);
